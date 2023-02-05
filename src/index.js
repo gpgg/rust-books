@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Fragment } from "react";
+import ReactDom from "react-dom/client";
+import BookList from "./BookList";
+import { beginnerBooks, intermediateBooks } from "./books";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  return (
+    <>
+      <h1 className="title">Rust Books</h1>
+      <BookList title="beginner books" books={beginnerBooks}></BookList>
+      <BookList title="intermediate books" books={intermediateBooks}></BookList>
+    </>
+  );
+};
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(<App />);
